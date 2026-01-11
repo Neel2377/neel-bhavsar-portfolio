@@ -64,7 +64,12 @@ function Project() {
                 title: "Digital Library",
                 img: "/images/P14.png",
                 link: "https://react-library-management-system-pr.vercel.app/",
-              }
+              },
+              {
+                title: "Image Uploader",
+                img: "/images/P15.png",
+                link: "https://image-upload-pr.onrender.com/login",
+              },
             ].map((project, index) => (
               <div key={index} className="col-12 col-md-6 col-lg-4 mb-4" style={{ letterSpacing: '2px' }}>
                 <a

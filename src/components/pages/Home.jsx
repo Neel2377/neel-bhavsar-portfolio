@@ -60,6 +60,8 @@ function Home() {
                   className="fw-bold fs-1"
                   style={{ letterSpacing: "2px", color: "#F5C857" }}
                 >
+                  Neel Bhavsar
+                  <br></br>
                   Full Stack Developer
                 </p>
 
@@ -106,7 +108,8 @@ function Home() {
             <div
               className="d-flex flex-wrap justify-content-center gap-4 mt-5 mb-5"
               style={{ letterSpacing: "2px" }}
-            >
+              >
+              {/* Phone */}
               <div className="information-box">
                 <div className="icon fs-2">
                   <i
@@ -123,6 +126,8 @@ function Home() {
                   </div>
                 </div>
               </div>
+
+              {/* Email */}
               <div className="information-box">
                 <div className="icon fs-2">
                   <i
@@ -135,13 +140,15 @@ function Home() {
                   <div className="info-text">
                     <Link
                       to="mailto:neelbhavsar440@gmail.com"
-                      className="text-white"
+                      className="text-white text-wrap"
                     >
                       neelbhavsar440@gmail.com
                     </Link>
                   </div>
                 </div>
               </div>
+
+              {/* Location */}
               <div className="information-box">
                 <div className="icon fs-2">
                   <i
@@ -154,6 +161,8 @@ function Home() {
                   <div className="info-text text-white">Gandevi, Gujarat</div>
                 </div>
               </div>
+
+              {/* Birth Date */}
               <div className="information-box">
                 <div className="icon fs-2">
                   <i
@@ -164,6 +173,62 @@ function Home() {
                 <div>
                   <h5 className="info-title">Birth Date :</h5>
                   <div className="info-text text-white">23/12/2000</div>
+                </div>
+              </div>
+
+              {/* Experience */}
+              <div className="information-box">
+                <div className="icon fs-2">
+                  <i
+                    className="ri-briefcase-line info-icon"
+                    style={{ color: "#F5C857" }}
+                  />
+                </div>
+                <div>
+                  <h5 className="info-title">Experience :</h5>
+                  <div className="info-text text-white">Fresher</div>
+                </div>
+              </div>
+
+              {/* Projects */}
+              <div className="information-box">
+                <div className="icon fs-2">
+                  <i
+                    className="ri-folder-line info-icon"
+                    style={{ color: "#F5C857" }}
+                  />
+                </div>
+                <div>
+                  <h5 className="info-title">Projects :</h5>
+                  <div className="info-text text-white">20+</div>
+                </div>
+              </div>
+
+              {/* Tech Stack */}
+              <div className="information-box">
+                <div className="icon fs-2">
+                  <i
+                    className="ri-stack-line info-icon"
+                    style={{ color: "#F5C857" }}
+                  />
+                </div>
+                <div>
+                  <h5 className="info-title">Tech Stack :</h5>
+                  <div className="info-text text-white">MERN</div>
+                </div>
+              </div>
+
+              {/* Country */}
+              <div className="information-box">
+                <div className="icon fs-2">
+                  <i
+                    className="ri-earth-line info-icon"
+                    style={{ color: "#F5C857" }}
+                  />
+                </div>
+                <div>
+                  <h5 className="info-title">Location :</h5>
+                  <div className="info-text text-white">India</div>
                 </div>
               </div>
             </div>
@@ -350,6 +415,11 @@ function Home() {
                 title: "Digital Library",
                 img: "/images/P14.png",
                 link: "https://react-library-management-system-pr.vercel.app/",
+              },
+              {
+                title: "Image Uploader",
+                img: "/images/P15.png",
+                link: "https://image-upload-pr.onrender.com/login",
               },
             ].map((project, index) => (
               <div
