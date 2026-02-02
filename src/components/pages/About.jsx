@@ -192,6 +192,16 @@ function About() {
             </div>
           </div>
         </div>
+        <div className="d-flex justify-content-center mb-5">
+          <a
+            href="/public/cv/Neel-Bhavsar.pdf"
+            download
+            className="download-cv-btn"
+          >
+            <i className="ri-download-2-line me-2" />
+            Download CV
+          </a>
+        </div>
       </section>
     </>
   );

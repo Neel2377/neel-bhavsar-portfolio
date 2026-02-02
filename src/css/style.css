@@ -51,6 +51,62 @@ li {
 
 .nav-link:focus {
   color: #f5c857;
+  outline: none;
+}
+
+/* focus underline */
+.nav-link:focus::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  width: 70%;
+  height: 2px;
+  background-color: #f5c857;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.nav-link {
+  position: relative;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0.75rem 1.2rem;
+  transition: color 0.3s ease;
+}
+
+/* underline */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #f5c857, #ffee91);
+  transition: all 0.35s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* hover effect */
+.nav-link:hover {
+  color: #ffee91;
+}
+
+.nav-link:hover::after {
+  width: 60%;
+}
+
+/* active route */
+.nav-link.active {
+  color: #f5c857;
+  text-decoration: underline;
+}
+
+.nav-link.active::after {
+  width: 70%;
 }
 
 .navbar-toggler {
@@ -249,12 +305,32 @@ li {
 }
 
 /* Icon */
+/* =========================
+   SOCIAL LINKS
+========================= */
+
 .social-link {
   font-size: 2.5rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
+/* lift on hover */
+.social-link:hover {
+  transform: translateY(-4px) scale(1.08);
+}
+
+/* click feedback */
+.social-link:active {
+  transform: scale(0.95);
+}
+
+/* brand colors */
 .linkedin .info-icon {
   color: #0a66c2;
 }
@@ -267,30 +343,85 @@ li {
   color: #ffffff;
 }
 
-/* Button */
+/* brand glow on hover */
+.linkedin:hover .info-icon {
+  filter: drop-shadow(0 0 8px rgba(10, 102, 194, 0.8));
+}
+
+.instagram:hover .info-icon {
+  filter: drop-shadow(0 0 8px rgba(225, 48, 108, 0.8));
+}
+
+.github:hover .info-icon {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+/* =========================
+   BUTTON
+========================= */
+
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 24px;
   border: 1px solid #007bff;
   border-radius: 10px;
   background-color: #007bff;
   font-size: 20px;
   font-weight: 600;
   color: #222222;
-  margin: auto;
-  height: 50px;
-  padding-top: 10px;
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  animation: fadeInUp 2.5s ease-in-out;
+  transition:
+    transform 0.25s ease,
+    background-color 0.3s ease,
+    box-shadow 0.25s ease;
 }
 
+/* hover */
 .btn:hover {
   background-color: #ffffff;
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.25);
+}
+
+/* active click */
+.btn:active {
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
+/* keyboard focus */
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
 }
 
 /* Grid column (if using flex/grid) */
 .col-3 {
   width: 24%;
+}
+
+.download-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border: 2px solid #f5c857;
+  color: #f5c857;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.download-cv-btn:hover {
+  background-color: #f5c857;
+  color: #111111;
+  transform: translateY(-3px);
 }
 
 @media (max-width: 576px) {
@@ -599,7 +730,9 @@ li {
   overflow: hidden;
   text-decoration: none;
   height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   animation: fadeInUp 0.9s ease forwards;
 }
 
@@ -755,7 +888,9 @@ li {
   color: #171717;
   padding: 0 30px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
   animation: fadeInUp 2.5s ease-in-out;
   width: 100%;
   max-width: 300px;
@@ -860,6 +995,10 @@ li {
 /* =========================
    FOOTER
 ========================= */
+/* =========================
+   FOOTER BASE
+========================= */
+
 .footer {
   background: #0f0f0f;
   padding: 60px 0 30px;
@@ -880,6 +1019,10 @@ li {
   max-width: 350px;
 }
 
+/* =========================
+   FOOTER LINKS
+========================= */
+
 .footer-links {
   padding: 0;
   margin: 0;
@@ -891,26 +1034,66 @@ li {
 }
 
 .footer-links a {
+  position: relative;
   color: #ffffff;
   font-size: 14px;
-  transition: 0.3s ease;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
+/* underline base */
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #f5c857;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+/* hover */
 .footer-links a:hover {
   color: #f5c857;
 }
+
+.footer-links a:hover::after {
+  width: 60%;
+}
+
+/* active */
+.footer-links a.active {
+  color: #f5c857;
+}
+
+.footer-links a.active::after {
+  width: 70%;
+}
+
+/* =========================
+   SOCIAL LINKS
+========================= */
 
 .footer-social a {
   color: #ffffff;
   font-size: 22px;
   margin-left: 15px;
-  transition: 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .footer-social a:hover {
   color: #f5c857;
   transform: translateY(-3px);
 }
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -922,6 +1105,10 @@ li {
   font-size: 13px;
   margin: 0;
 }
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 767px) {
   .footer {
@@ -937,8 +1124,8 @@ li {
   }
 
   .footer-social {
-    justify-content: center;
     display: flex;
+    justify-content: center;
     margin-top: 10px;
   }
 

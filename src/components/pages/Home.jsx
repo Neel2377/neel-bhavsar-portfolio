@@ -108,7 +108,7 @@ function Home() {
             <div
               className="d-flex flex-wrap justify-content-center gap-4 mt-5 mb-5"
               style={{ letterSpacing: "2px" }}
-              >
+            >
               {/* Phone */}
               <div className="information-box">
                 <div className="icon fs-2">
@@ -270,6 +270,16 @@ function Home() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="d-flex justify-content-center mb-5">
+          <a
+            href="/public/cv/Neel-Bhavsar.pdf"
+            download
+            className="download-cv-btn"
+          >
+            <i className="ri-download-2-line me-2" />
+            Download CV
+          </a>
         </div>
       </section>
 
